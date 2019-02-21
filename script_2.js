@@ -14,6 +14,6 @@ function factorial(facto) {
 let helloNumber=parseInt(prompt("choisissez un nombre positif"));
 
 
-console.log(`ton nom est : ${factorial(helloNumber)}`);
+console.log(`resultat : ${factorial(helloNumber)}`);
 
 //factorial(5)
