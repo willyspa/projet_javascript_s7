@@ -34,8 +34,30 @@ console.log(`Il y ${i} journalistes avec une majuscule apres le @`);
 i=0;
 
 handle.forEach(function(element) {
-  if(/@[A-Z]/.test(element)){
+  if(/[A-Z]/.test(element)){
   i++;
   }
 });
-console.log(`Il y ${i} journalistes avec une majuscule apres le @`);
+console.log(`Il y ${i} journalistes avec une majuscule`);
+
+i=0;
+handle.forEach(function(element) {
+  if(/_/.test(element)){
+  i++;
+  }
+});
+console.log(`Il y ${i} journalistes avec un underscore`);
+
+let handletwitter = handle.map(v => v.toLowerCase());
+
+console.log(handletwitter.sort())
+
+console.log(handle.sort((a, b) => a.length - b.length).slice(0, 50));
+
+function handleWhereIsEpenser(element) {
+  let find = /epenser/;
+  return element.match(find)
+}
+let position = handle.findIndex(handleWhereIsEpenser);
+
+console.log(`@epenser est à la : ${position} position.`);
